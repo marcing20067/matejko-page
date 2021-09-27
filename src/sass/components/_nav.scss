@@ -1,11 +1,12 @@
 @import "variables";
 @import "hamburger";
 
-.block-scroll {
-    height: 100vh;
-    overflow: hidden;
+@media (max-width: 768px) {
+    .block-scroll {
+        height: 100vh;
+        overflow: hidden;
+    }
 }
-
 
 .nav {
     &__button {
@@ -66,7 +67,6 @@
             width: fit-content;
         }
 
-        
         &--active &__container {
             transform: translateX(0);
         }
