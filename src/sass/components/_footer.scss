@@ -1,0 +1,13 @@
+@import '../variables';
+
+.footer {
+    width: 100%;
+    background-color: $footer-background-color;
+    
+    &__text {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 2rem;
+    }
+}

@@ -1,0 +1,14 @@
+@media (min-width: 1200px) {
+    .marriage {
+        &__box {
+            display: flex;
+        }
+        
+        &__img {
+            max-height: 40rem;
+            height: 100%;
+            width: 50%;
+            margin: 0 $margin-image 0 0;
+        }
+    }
+}

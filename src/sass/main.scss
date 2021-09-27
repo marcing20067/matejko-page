@@ -1,0 +1,56 @@
+@use "components/components" as components;
+
+@include components.h1;
+@include components.h2;
+@include components.text-box;
+@include components.section-padding;
+@include components.wrapper;
+
+@import "variables";
+@import "reset";
+@import "components/nav";
+@import "components/footer";
+
+b {
+    font-weight: 500;
+}
+
+.box {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.about-artist {
+    padding-top: 0;
+
+    &__img {
+        width: 100%;
+        margin-bottom: $margin-image;
+    }
+}
+
+.youth {
+    text-align: center;
+}
+
+.marriage {
+    &__img {
+        width: 100%;
+        margin-bottom: $margin-image;
+    }
+}
+
+.notification {
+    text-align: center;
+}
+
+@import "medium";
+@import "large";

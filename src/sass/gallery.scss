@@ -1,0 +1,92 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+
+@use "components/components" as components;
+@include components.h2;
+@include components.wrapper;
+@include components.section-padding;
+
+@import "variables";
+@import "reset";
+
+@import "components/nav";
+@import "components/footer";
+
+$all-slides: 6;
+@function get-copied-slide-transform() {
+    $one-slide-transform-operation: "(100% - #{$margin-image} * #{$all-slides - 1}) / #{$all-slides}";
+    $copied-slide-transform: calc((100% - #{$one-slide-transform-operation}) * (-1));
+    @return $copied-slide-transform;
+}
+$copied-slide-transform: get-copied-slide-transform();
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+$hamburger-width: 7rem;
+.nav__button {
+    position: static;
+    margin-left: calc(100% - #{$hamburger-width});
+}
+
+.gallery {
+    &__title {
+        text-align: center;
+    }
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+
+    &__box {
+        display: grid;
+        grid-template-columns: repeat($all-slides, 1fr);
+        column-gap: $margin-image;
+        width: calc(#{$all-slides} * 100% + #{$margin-image} * (#{$all-slides} - 1));
+        height: 100%;
+        animation: slider 90s linear infinite;
+    }
+    &__item {
+        &-img {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@keyframes slider {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX($copied-slide-transform);
+    }
+    50.00000001% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX($copied-slide-transform);
+    }
+}
+
+@media (min-width: 768px) {
+    .nav__container {
+        position: static;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery {
+        width: 60%;
+    }
+    .slider__box {
+        animation: slider 120s linear infinite;
+    }
+}

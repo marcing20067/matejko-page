@@ -1,0 +1,24 @@
+@import "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    font-size: $font-size;
+    font-family: "Red Hat Text", sans-serif;
+    color: $font-color;
+    background-color: $background-color;
+}
+

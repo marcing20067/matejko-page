@@ -1,0 +1,22 @@
+@use "components/components" as components;
+@include components.h1;
+@include components.h2;
+@include components.wrapper;
+@import "components/footer";
+@import "variables";
+@import "reset";
+// TODO: LEARN ABOUT @USE
+@import "components/nav";
+
+@import "medium";
+@import "large";
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    margin: auto;
+}
